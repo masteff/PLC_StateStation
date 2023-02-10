@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <POU Name="FB_State_Idle" Id="{611356df-394d-4c5b-b921-ec2aaa8026ea}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_State_Idle EXTENDS FB_BaseState IMPLEMENTS Istate
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="mStart" Id="{e0f33d6c-00a6-4167-a8f6-932d36b0108d}">
+      <Declaration><![CDATA[METHOD mStart
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ADSLOGSTR(ADSLOG_MSGTYPE_HINT, 'Start signal asserted.', '');]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="pMessage" Id="{d890618a-09b3-43e9-afab-a6a1fc2446d2}">
+      <Declaration><![CDATA[{error 'add property implementation or delete property to use base implementation'}
+PROPERTY pMessage : STRING
+]]></Declaration>
+      <Get Name="Get" Id="{d2de0552-adcd-4843-bfaa-36361f39a9cf}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[pMessage := 'Waiting for start signal';]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <LineIds Name="FB_State_Idle">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_State_Idle.mStart">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_State_Idle.pMessage.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

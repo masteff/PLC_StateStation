@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <POU Name="FB_BaseState" Id="{8449a010-d346-45fc-ac07-fe9a1eaecc14}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_BaseState IMPLEMENTS Istate
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	_pStation		: REFERENCE TO FB_Station;
+	bIsInitalized	: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="FB_init" Id="{48245767-a5cc-40e5-bb2b-835b6d9e87b5}">
+      <Declaration><![CDATA[METHOD FB_init : BOOL
+VAR_INPUT
+	bInitRetains : BOOL; // if TRUE, the retain variables are initialized (warm start / cold start)
+	bInCopyCode : BOOL;  // if TRUE, the instance afterwards gets moved into the copy code (online change)
+	
+	StationPointer 	: POINTER TO FB_Station;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mExecute" Id="{521ddd78-4d09-4566-9d76-1b16d49db34b}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD mExecute
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mHold" Id="{42dce020-4531-4286-9dce-1d80dd02d5ff}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD mHold
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mStart" Id="{d71d28e7-e340-45af-8af7-3f2d84a5abf3}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD mStart
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mStop" Id="{b742d1cb-9d9b-4cd4-b8f4-798551bf5b33}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+METHOD mStop
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="pMessage" Id="{28b93941-4340-432d-941d-6b8d7e8b94db}">
+      <Declaration><![CDATA[PROPERTY pMessage : STRING
+]]></Declaration>
+      <Get Name="Get" Id="{8761b569-7439-4d25-b331-54b2cdba8ddb}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="pStation" Id="{03c903f9-b001-462a-9492-cfae314d5c55}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'variable'}
+PROPERTY pStation : REFERENCE TO FB_Station;
+]]></Declaration>
+      <Get Name="Get" Id="{45337113-012a-481e-a096-a31799ecc47c}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[pStation REF= _pStation;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{ba781cba-cd4a-4613-b5f6-085a54fdb138}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[_pStation REF= pStation;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <LineIds Name="FB_BaseState">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BaseState.FB_init">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BaseState.mExecute">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BaseState.mHold">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BaseState.mStart">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BaseState.mStop">
+      <LineId Id="4" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BaseState.pMessage.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BaseState.pStation.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BaseState.pStation.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

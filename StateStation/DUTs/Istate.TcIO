@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <Itf Name="Istate" Id="{abd74a6c-8f35-442c-b708-0cd9d237a262}">
+    <Declaration><![CDATA[INTERFACE Istate
+]]></Declaration>
+    <Method Name="mExecute" Id="{16b552e6-1a3a-498d-934a-985d1bae9d2f}">
+      <Declaration><![CDATA[METHOD mExecute
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="mHold" Id="{b92f87df-f37e-4730-b35d-a3120e980482}">
+      <Declaration><![CDATA[METHOD mHold
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="mStart" Id="{4cd822d5-9850-4987-90c0-28d3dd087088}">
+      <Declaration><![CDATA[METHOD mStart
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="mStop" Id="{b1f20e9f-24a3-44e8-a918-984751cd0d27}">
+      <Declaration><![CDATA[METHOD mStop
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="pMessage" Id="{65b2abd4-9067-42b8-b38b-5c3000e721dc}">
+      <Declaration><![CDATA[PROPERTY pMessage : String]]></Declaration>
+      <Get Name="Get" Id="{e6666da1-b2ef-41c0-b993-79e7fef66188}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>

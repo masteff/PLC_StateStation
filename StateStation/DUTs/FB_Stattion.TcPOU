@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <POU Name="FB_Stattion" Id="{c03aabfa-d216-4974-9011-f97e7525d0b1}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Stattion
+VAR_INPUT
+	bStart				: BOOL;
+	bStop				: BOOL;
+	bHold				: BOOL;
+END_VAR
+VAR_OUTPUT
+	iCurrentState		: Istate := fbStateIdle;
+END_VAR
+VAR
+	fbStateIdle			: FB_State_Idle(THIS);
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="FB_Stattion">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
